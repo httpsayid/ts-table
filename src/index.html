@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Справочник организаций</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <div class="container mx-auto p-4">
+    <h1 class="text-2xl font-bold mb-4">Справочник организаций</h1>
+
+    <div class="mb-4 flex justify-between items-center">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Найти по ФИО..."
+        class="p-2 border rounded w-64"
+      />
+      <button
+        id="add-btn"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      >
+        Добавить
+      </button>
+    </div>
+
+    <table class="min-w-full bg-white border mb-4">
+      <thead>
+        <tr>
+          <th data-sort="company" class="py-2 px-4 border cursor-pointer hover:bg-gray-100">
+            Название
+          </th>
+          <th data-sort="directorFullName" class="py-2 px-4 border cursor-pointer hover:bg-gray-100">
+            ФИО директора
+          </th>
+          <th class="py-2 px-4 border">Телефон</th>
+          <th class="py-2 px-4 border">Адрес</th>
+          <th class="py-2 px-4 border">Действия</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+
+    <div id="pagination" class="flex justify-center"></div>
+  </div>
+
+  <script type="module" src="main.ts"></script>
+</body>
+</html>
