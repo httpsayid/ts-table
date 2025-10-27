@@ -124,7 +124,7 @@ export class ModalView {
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const formData = new FormData(form);
+      const formData = new FormData(form as HTMLFormElement);
       const userData = {
         id: currentUser?.id || Date.now(),
         name: formData.get('directorFullName') as string,
